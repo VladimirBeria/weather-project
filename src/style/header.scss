@@ -1,0 +1,72 @@
+@import "variables";
+
+
+header i {
+  color: #fff;
+}
+
+.menu-button {
+  align-self: center;
+  margin-right: 16px;
+}
+
+.searchbar {
+  background-color: #fff;
+  border-radius: 8px;
+
+  .fa-compass {
+    padding: 0 12px 0 8px;
+  }
+
+  .fa-search {
+    padding-right: 10px;
+  }
+
+  i {
+    color: #0B63EA;
+  }
+
+  input {
+    font-size: 14px;
+    border: 0 solid transparent;
+    height: 100%;
+    color: #1C2130;
+    font-weight: $font-weight_bold;
+  }
+}
+
+.lang-selector {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+
+  i {
+    padding-left: 10px;
+  }
+
+  .form-select {
+    color: #fff;
+
+    option {
+      background-color: #fff;
+      color: $text__color_light;
+
+      &:hover{
+        background-color: $text__color_bold;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  select {
+    background: none;
+    border: transparent;
+  }
+}

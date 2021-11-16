@@ -1,0 +1,19 @@
+@import "variables";
+
+.main__bg {
+  background: $main__bg_color;
+}
+
+.container {
+  &__header {
+    padding: 14px 12px 14px 24px;
+  }
+
+  &__main {
+    padding: 0 24px;
+  }
+}
+
+.container__main {
+
+}

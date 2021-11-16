@@ -1,0 +1,177 @@
+@import "variables";
+
+.breadcrumbs-wrapper {
+  margin-top: 10px;
+
+  a {
+    color: $link_color;
+  }
+}
+
+.weather-title {
+  margin: 8px 0 12px 0;
+}
+
+.card {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+}
+
+.forecast-card {
+  padding: 27px 20px;
+  max-width: calc(100% - 316px);
+
+  .date__btn {
+    width: auto;
+
+    strong {
+      font-size: 20px;
+      font-weight: $font-weight_bold;
+    }
+
+    span {
+      margin-left: 8px;
+      color: $text__color_light;
+      font-size: 16px;
+      font-weight: $font-weight_light;
+    }
+  }
+
+  &__footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .last-update {
+      color: $text__color_light;
+      align-self: center;
+      font-size: 12px;
+    }
+
+    .btn {
+      color: #fff;
+      background-color: $btn__color;
+      font-size: 16px;
+      padding: 6px 38px;
+      border-radius: 8px;
+    }
+  }
+}
+
+.weather-details {
+  margin-top: 16px;
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 14px;
+
+    span {
+      margin-left: 8px;
+      color: $text__color_light;
+    }
+  }
+
+  .details-info {
+    width: 52px;
+  }
+}
+
+.details-info-wrapper {
+  width: auto;
+}
+
+.weather-details.precipitation, .weather-details.wind {
+  margin-top: 33px;
+
+  .details-info {
+    height: 80px;
+  }
+}
+
+.details-info {
+  padding: 0;
+  text-align: center;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__time {
+    color: $text__color_light;
+    font-size: 14px;
+  }
+
+  &__img {
+    margin-top: 13px;
+  }
+
+  &__graph {
+    font-size: 16px;
+    color: $text__color_light;
+    font-weight: $font-weight_base;
+
+    .graph_top {
+      color: $text__color_bold;
+      margin-bottom: 4px;
+    }
+
+    .graph_bottom {
+      max-height: 55px;
+      min-height: 27px;
+      border-top: 3px solid #3983FF;
+      background: linear-gradient(180deg, rgba(57, 131, 255, 0.3) 0%, rgba(57, 131, 255, 0) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: self-end;
+    }
+  }
+}
+
+.graph_top small {
+  font-size: 12px;
+}
+
+.sidebar-card {
+  max-width: 300px;
+  padding: 16px;
+}
+
+.sidebar {
+  padding-left: 16px;
+  padding-right: 0;
+
+  &__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: $font-weight_bold;
+  }
+}
+
+.news-item {
+  display: flex;
+  padding: 16px 0;
+
+  .text-wrapper{
+    padding-left: 12px;
+  }
+
+  &__tag {
+    font-weight: $font-weight_light;
+    font-size: 12px;
+    color: $link_color;
+  }
+
+  &__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+  }
+
+  &__title h5 {
+    color: $text__color_bold;
+    font-size: 16px;
+  }
+}
+
+
