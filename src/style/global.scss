@@ -4,16 +4,55 @@
   background: $main__bg_color;
 }
 
+body {
+  background: #F2F5FA;
+  font-family: 'Roboto', sans-serif;
+}
+
 .container {
   &__header {
     padding: 14px 12px 14px 24px;
   }
 
   &__main {
-    padding: 0 24px;
+    padding: 0 24px 0 28px;
   }
 }
+//Tooltip
+.tooltip {
+  opacity: 1;
+  position: relative;
+  display: inline-block;
+}
 
-.container__main {
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background: rgba(51, 51, 51, 0.9);
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  top: 100%;
+  left: 50%;
+  margin-left: -25px;
+  position: absolute;
+  z-index: 1;
+}
 
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+@media (max-width: $width__desktop) {
+  .container {
+    &__header {
+      padding: 6px 6px 6px 16px;
+    }
+
+    &__main {
+      padding: 14px;
+    }
+  }
 }

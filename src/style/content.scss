@@ -6,10 +6,29 @@
   a {
     color: $link_color;
   }
+
+  .breadcrumb {
+    margin-bottom: 6px;
+
+    .breadcrumb-item {
+      font-size: 14px;
+    }
+
+    .active {
+      padding-left: 5px;
+    }
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    padding-right: 5px;
+  }
 }
 
 .weather-title {
+  font-size: 24px;
+  font-weight: $font-weight_bold;
   margin: 8px 0 12px 0;
+  line-height: 32px;
 }
 
 .card {
@@ -19,8 +38,19 @@
 }
 
 .forecast-card {
-  padding: 27px 20px;
+  padding: 20px 20px;
   max-width: calc(100% - 316px);
+
+  &__wrapper {
+    min-width: 694px;
+    height: 551px;
+    width: max-content;
+  }
+
+  &__scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
 
   .date__btn {
     width: auto;
@@ -39,9 +69,9 @@
   }
 
   &__footer {
-    margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 22px;
 
     .last-update {
       color: $text__color_light;
@@ -78,11 +108,12 @@
 }
 
 .details-info-wrapper {
+  padding: 0 16px;
   width: auto;
 }
 
 .weather-details.precipitation, .weather-details.wind {
-  margin-top: 33px;
+  margin-top: 30px;
 
   .details-info {
     height: 80px;
@@ -134,10 +165,11 @@
 
 .sidebar-card {
   max-width: 300px;
-  padding: 16px;
+  padding: 16px 12px;
 }
 
 .sidebar {
+  max-width: 316px;
   padding-left: 16px;
   padding-right: 0;
 
@@ -150,13 +182,14 @@
 
 .news-item {
   display: flex;
-  padding: 16px 0;
+  padding: 15px 0;
 
-  .text-wrapper{
+  .text-wrapper {
     padding-left: 12px;
   }
 
   &__tag {
+    margin-bottom: 7px;
     font-weight: $font-weight_light;
     font-size: 12px;
     color: $link_color;
@@ -169,8 +202,93 @@
   }
 
   &__title h5 {
+    font-weight: $font-weight_bold;
+    line-height: 22px;
     color: $text__color_bold;
     font-size: 16px;
+  }
+}
+
+@media (max-width: $width__desktop) {
+  .breadcrumbs-wrapper {
+    margin: 0;
+
+    .breadcrumb {
+      margin-bottom: 9px;
+    }
+  }
+
+  .details-info {
+    height: 175px;
+
+    &__graph {
+      .graph_top {
+        margin-bottom: 13px;
+      }
+    }
+  }
+
+  .weather-details {
+    margin-top: 13px;
+  }
+
+  .weather-details.precipitation {
+    margin-top: 40px;
+  }
+
+  .weather-details.wind {
+    margin-top: 60px;
+  }
+
+  .weather-title {
+    margin: 9px 0 12px 0;
+  }
+
+  .forecast-card__wrapper {
+    height: 626px;
+  }
+
+  .forecast-card {
+    padding: 12px 20px 0 15px;
+    max-width: unset;
+    margin-bottom: 27px;
+
+    &__footer {
+      text-align: center;
+      display: unset;
+
+      .btn {
+        width: 100%;
+        padding: 11px 0;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .news-item {
+    padding: 12px 0;
+
+    &__img img {
+      width: 87px;
+    }
+
+    .text-wrapper {
+      padding-left: 22px;
+    }
+  }
+
+  .sidebar {
+    max-width: unset;
+    padding: unset;
+  }
+
+  .sidebar-card {
+    max-width: unset;
+    padding: 11px 14px 5px 12px;
+  }
+
+  .news-item__title h5 {
+    line-height: 22px;
   }
 }
 

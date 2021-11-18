@@ -10,9 +10,16 @@ header i {
   margin-right: 16px;
 }
 
+.searchbar_padding {
+  padding-right: 1.5rem
+}
+
 .searchbar {
   background-color: #fff;
   border-radius: 8px;
+  width: 280px;
+  height: 33px;
+  align-self: center;
 
   .fa-compass {
     padding: 0 12px 0 8px;
@@ -27,6 +34,7 @@ header i {
   }
 
   input {
+    margin-right: 20px;
     font-size: 14px;
     border: 0 solid transparent;
     height: 100%;
@@ -35,12 +43,21 @@ header i {
   }
 }
 
+.lang-selector-wrapper {
+  display: flex;
+  justify-content: end;
+}
+
 .lang-selector {
   border-radius: 8px;
   display: flex;
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
+
+  .lang-down-icon {
+    margin-right: 12px;
+  }
 
   i {
     padding-left: 10px;
@@ -53,7 +70,7 @@ header i {
       background-color: #fff;
       color: $text__color_light;
 
-      &:hover{
+      &:hover {
         background-color: $text__color_bold;
       }
     }
@@ -68,5 +85,60 @@ header i {
   select {
     background: none;
     border: transparent;
+  }
+}
+
+//Custom select reset
+body .custom-select-container {
+  .custom-select-option {
+    background: #FFFFFF;
+    color: $text__color_light;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 2px 0;
+  }
+
+  .has-focus {
+    background: #FFFFFF;
+    color: $text__color_bold;
+  }
+
+  .is-selected::before {
+    display: none;
+  }
+
+  .custom-select-panel {
+    right: -23px;
+    width: 97px;
+    top: 26px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .custom-select-opener {
+    background: transparent;
+    padding: 3px 11px;
+  }
+}
+
+@media (max-width: $width__desktop) {
+  .container__header .row {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+
+    .searchbar_padding {
+      padding: 0;
+    }
+
+    .searchbar {
+      display: none;
+    }
+
+    .col-md-6 {
+      width: auto;
+      padding: 0;
+    }
   }
 }

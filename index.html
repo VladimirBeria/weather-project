@@ -7,15 +7,19 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Document</title>
     <link href="./dist/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 <header class="main__bg">
     <div class="container__header">
         <div class="row">
-            <div class="col-md-6">
-                <div class="d-flex justify-content-between">
+            <div class="col-md-6 d-flex searchbar_padding">
+                <div class="d-flex justify-content-between w-100">
                     <div class="d-flex">
-                        <div class="menu-button">
+                        <div class="menu-button" data-bs-target="#exampleModal" data-bs-toggle="modal"
+                             id="navMenu" type="button">
                             <i class="fas fa-bars"></i>
                         </div>
                         <img alt="logo" class="logo" src="img/logo.png">
@@ -27,16 +31,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="d-flex justify-content-end">
-                    <div class="lang-selector">
-                        <i class="fas fa-globe"></i>
-                        <select aria-label="Disabled select example" class="form-select">
-                            <option value="ukr">УКР</option>
-                            <option value="rus">РУС</option>
-                        </select>
-                    </div>
-
+            <div class="col-md-6 lang-selector-wrapper">
+                <div class="lang-selector">
+                    <i class="fas fa-globe"></i>
+                    <select aria-label="Disabled select example" class="form-select pe-0" id="langSelector">
+                        <option value="ukr">УКР</option>
+                        <option value="rus">РУС</option>
+                    </select>
+                    <svg class="lang-down-icon" fill="none" height="7" viewBox="0 0 8 5" width="10"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.710272 1.71L3.30027 4.3C3.69027 4.69 4.32027 4.69 4.71027 4.3L7.30027 1.71C7.92027 1.08 7.48027 0 6.59027 0L1.42027 0C0.520272 0 0.0802717 1.08 0.710272 1.71Z"
+                              fill="white"></path>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -47,408 +53,1000 @@
         <nav aria-label="breadcrumb" class="breadcrumbs-wrapper" style="--bs-breadcrumb-divider: '>';">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Хмельницкая область</a></li>
-                <li aria-current="page" class="breadcrumb-item active">Камянец-Подольский р-н</li>
+                <li aria-current="page" class="breadcrumb-item active"><a href="#">Камянец-Подольский р-н</a></li>
             </ol>
         </nav>
         <h1 class="weather-title">Прогноз на неделю в Каменец-Подольском</h1>
         <div class="row m-0">
             <div class="forecast-card card">
-                <div class="row justify-content-between">
-                    <div class="date__btn"><strong>Сегодня</strong><span>13 января</span></div>
-                    <div class="date__btn"><strong>Завтра</strong><span>14 января</span></div>
-                    <div class="date__btn"><strong>Понедельник</strong><span>14 января</span></div>
-                </div>
-                <div class="weather-details temperature">
-                    <div class="weather-details__title">
-                        <strong>Температура</strong><span>фактическая / ощущается</span>
-                    </div>
-                    <div class="row justify-content-between">
-                        <div class="row m-0 details-info-wrapper">
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>Ночь</span>
-                                    </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+28°</span></div>
-                                    <div class="graph_bottom" style="height: 34px"><span>+25°</span></div>
-                                </div>
+                <div class="forecast-card__scroll">
+                    <div class="forecast-card__wrapper">
+                        <div class="row justify-content-between">
+                            <div class="date__btn"><strong>Сегодня</strong><span>13 января</span></div>
+                            <div class="date__btn"><strong>Сегодня</strong><span>13 января</span></div>
+                            <div class="date__btn"><strong>Сегодня</strong><span>13 января</span></div>
+                            <div class="date__btn"><strong>Сегодня</strong><span>13 января</span></div>
+                            <div class="date__btn"><strong>Сегодня</strong><span>13 января</span></div>
+                            <div class="date__btn"><strong>Завтра</strong><span>14 января</span></div>
+                            <div class="date__btn"><strong>Понедельник</strong><span>14 января</span></div>
+                        </div>
+                        <div class="weather-details temperature">
+                            <div class="weather-details__title">
+                                <strong>Температура</strong><span>фактическая / ощущается</span>
                             </div>
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>Утро</span>
-                                    </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+29°</span></div>
-                                    <div class="graph_bottom" style="height: 41px"><span>+28°</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>День</span>
-                                    </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
-                                    </div>
-                                </div>
+                            <div class="row justify-content-between">
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Ночь</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+32°</span></div>
-                                    <div class="graph_bottom" style="height: 54px"><span>+29°</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>Вечер</span>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+28°</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>+25°</span></div>
+                                        </div>
                                     </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Утро</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+29°</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>+28°</span></div>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>День</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+30°</span></div>
-                                    <div class="graph_bottom" style="height: 48px"><span>+28°</span></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+32°</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>+29°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Вечер</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+30°</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Ночь</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+28°</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>+25°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Утро</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+29°</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>День</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+32°</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>+29°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Вечер</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+30°</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Ночь</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+28°</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>+25°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Утро</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+29°</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>День</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+32°</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>+29°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Вечер</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+30°</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Ночь</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+28°</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>+25°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Утро</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+29°</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>День</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+32°</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>+29°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Вечер</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+30°</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Ночь</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+28°</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>+25°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Утро</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+29°</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>День</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+32°</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>+29°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Вечер</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+30°</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Ночь</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+28°</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>+25°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Утро</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+29°</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>День</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+32°</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>+29°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Вечер</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+30°</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Ночь</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+28°</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>+25°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Утро</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+29°</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>День</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+32°</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>+29°</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div>
+                                            <div class="details-info__time">
+                                                <span>Вечер</span>
+                                            </div>
+                                            <div class="details-info__img">
+                                                <div class="tooltip">
+                                                    <img alt="" src="./img/Mostly_cloudy.png">
+                                                    <span class="tooltiptext">Пасмурно, без осадков, прохладно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>+30°</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>+28°</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row m-0 details-info-wrapper">
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>Ночь</span>
-                                    </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+28°</span></div>
-                                    <div class="graph_bottom" style="height: 34px"><span>+25°</span></div>
-                                </div>
+                        <div class="weather-details precipitation">
+                            <div class="weather-details__title">
+                                <strong>Осадки</strong><span>количество / вероятность</span>
                             </div>
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>Утро</span>
+                            <div class="row justify-content-between">
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>60%</span></div>
+                                        </div>
                                     </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>70%</span></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+29°</span></div>
-                                    <div class="graph_bottom" style="height: 41px"><span>+28°</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>День</span>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>80%</span></div>
+                                        </div>
                                     </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+32°</span></div>
-                                    <div class="graph_bottom" style="height: 54px"><span>+29°</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>Вечер</span>
-                                    </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>70%</span></div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+30°</span></div>
-                                    <div class="graph_bottom" style="height: 48px"><span>+28°</span></div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>60%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>80%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>60%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>80%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>60%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>80%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>60%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>80%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>60%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>80%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2</span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span>60%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4</span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span>70%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9</span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span>80%</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6</span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span>70%</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row m-0 details-info-wrapper">
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>Ночь</span>
-                                    </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+28°</span></div>
-                                    <div class="graph_bottom" style="height: 34px"><span>+25°</span></div>
-                                </div>
+                        <div class="weather-details wind">
+                            <div class="weather-details__title">
+                                <strong>Ветер</strong><span>сила / направление</span>
                             </div>
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>Утро</span>
+                            <div class="row justify-content-between">
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
                                     </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+29°</span></div>
-                                    <div class="graph_bottom" style="height: 41px"><span>+28°</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>День</span>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span><i
+                                                    class="fas fa-long-arrow-alt-right"></i></span></div>
+                                        </div>
                                     </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
-                                    </div>
-                                </div>
-
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+32°</span></div>
-                                    <div class="graph_bottom" style="height: 54px"><span>+29°</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div>
-                                    <div class="details-info__time">
-                                        <span>Вечер</span>
-                                    </div>
-                                    <div class="details-info__img">
-                                        <img src="./img/Mostly_cloudy.png" alt="">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>+30°</span></div>
-                                    <div class="graph_bottom" style="height: 48px"><span>+28°</span></div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span><i
+                                                    class="fas fa-long-arrow-alt-right"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="weather-details precipitation">
-                    <div class="weather-details__title">
-                        <strong>Осадки</strong><span>количество / вероятность</span>
-                    </div>
-                    <div class="row justify-content-between">
-                        <div class="row m-0 details-info-wrapper">
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>2</span></div>
-                                    <div class="graph_bottom" style="height: 34px"><span>60%</span></div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span><i
+                                                    class="fas fa-long-arrow-alt-right"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>4</span></div>
-                                    <div class="graph_bottom" style="height: 41px"><span>70%</span></div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span><i
+                                                    class="fas fa-long-arrow-alt-right"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>9</span></div>
-                                    <div class="graph_bottom" style="height: 54px"><span>80%</span></div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span><i
+                                                    class="fas fa-long-arrow-alt-right"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>6</span></div>
-                                    <div class="graph_bottom" style="height: 48px"><span>70%</span></div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span><i
+                                                    class="fas fa-long-arrow-alt-right"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row m-0 details-info-wrapper">
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>2</span></div>
-                                    <div class="graph_bottom" style="height: 34px"><span>60%</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>4</span></div>
-                                    <div class="graph_bottom" style="height: 41px"><span>70%</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>9</span></div>
-                                    <div class="graph_bottom" style="height: 54px"><span>80%</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>6</span></div>
-                                    <div class="graph_bottom" style="height: 48px"><span>70%</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row m-0 details-info-wrapper">
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>2</span></div>
-                                    <div class="graph_bottom" style="height: 34px"><span>60%</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>4</span></div>
-                                    <div class="graph_bottom" style="height: 41px"><span>70%</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>9</span></div>
-                                    <div class="graph_bottom" style="height: 54px"><span>80%</span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>6</span></div>
-                                    <div class="graph_bottom" style="height: 48px"><span>70%</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="weather-details wind">
-                    <div class="weather-details__title">
-                        <strong>Ветер</strong><span>сила / направление</span>
-                    </div>
-                    <div class="row justify-content-between">
-                        <div class="row m-0 details-info-wrapper">
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>2 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 34px"><span><i
-                                            class="fas fa-long-arrow-alt-left"></i></span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>4 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 41px"><span><i
-                                            class="fas fa-long-arrow-alt-left"></i></span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>9 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 54px"><span><i
-                                            class="fas fa-long-arrow-alt-right"></i></span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>6 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 48px"><span><i
-                                            class="fas fa-long-arrow-alt-left"></i></span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row m-0 details-info-wrapper">
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>2 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 34px"><span><i
-                                            class="fas fa-long-arrow-alt-left"></i></span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>4 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 41px"><span><i
-                                            class="fas fa-long-arrow-alt-left"></i></span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>9 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 54px"><span><i
-                                            class="fas fa-long-arrow-alt-right"></i></span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>6 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 48px"><span><i
-                                            class="fas fa-long-arrow-alt-left"></i></span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row m-0 details-info-wrapper">
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>2 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 34px"><span><i
-                                            class="fas fa-long-arrow-alt-left"></i></span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>4 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 41px"><span><i
-                                            class="fas fa-long-arrow-alt-left"></i></span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>9 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 54px"><span><i
-                                            class="fas fa-long-arrow-alt-right"></i></span></div>
-                                </div>
-                            </div>
-                            <div class="details-info">
-                                <div></div>
-                                <div class="details-info__graph">
-                                    <div class="graph_top"><span>6 <small>м/с</small></span></div>
-                                    <div class="graph_bottom" style="height: 48px"><span><i
-                                            class="fas fa-long-arrow-alt-left"></i></span></div>
+                                <div class="row m-0 details-info-wrapper">
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>2 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 34px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>4 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 41px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>9 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 54px"><span><i
+                                                    class="fas fa-long-arrow-alt-right"></i></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="details-info">
+                                        <div></div>
+                                        <div class="details-info__graph">
+                                            <div class="graph_top"><span>6 <small>м/с</small></span></div>
+                                            <div class="graph_bottom" style="height: 48px"><span><i
+                                                    class="fas fa-long-arrow-alt-left"></i></span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -463,35 +1061,38 @@
                     </button>
                 </div>
             </div>
-            <sidebar class="sidebar" style="max-width: 316px">
+            <sidebar class="sidebar">
                 <div class="sidebar-card card">
                     <h2 class="sidebar__title">Новости</h2>
                     <div class="news-item">
-                        <div class="news-item__img"><img src="./img/news-img.png" alt="img"></div>
+                        <div class="news-item__img"><img alt="img" src="./img/news-img.png"></div>
                         <div class="text-wrapper">
                             <div class="news-item__tag"><a href="">Стихии и катастрофы</a></div>
-                            <div class="news-item__title"><h5>Смартфоны научили определять опьянение хозяина по походке</h5></div>
+                            <div class="news-item__title"><h5>Смартфоны научили определять опьянение хозяина по
+                                походке</h5></div>
                         </div>
                     </div>
                     <div class="news-item">
-                        <div class="news-item__img"><img src="./img/news-img02.png" alt="img"></div>
+                        <div class="news-item__img"><img alt="img" src="./img/news-img02.png"></div>
                         <div class="text-wrapper">
                             <div class="news-item__tag"><a href="">Технологии</a></div>
                             <div class="news-item__title"><h5>Калифорния потерпает от пожаров</h5></div>
                         </div>
                     </div>
                     <div class="news-item">
-                        <div class="news-item__img"><img src="./img/news-img01.png" alt="img"></div>
+                        <div class="news-item__img"><img alt="img" src="./img/news-img01.png"></div>
                         <div class="text-wrapper">
                             <div class="news-item__tag"><a href="">Происшедствия</a></div>
-                            <div class="news-item__title"><h5>Наводнения обрушились на 8 северных провинций Таиланда</h5></div>
+                            <div class="news-item__title"><h5>Наводнения обрушились на 8 северных провинций
+                                Таиланда</h5></div>
                         </div>
                     </div>
                     <div class="news-item">
-                        <div class="news-item__img"><img src="./img/news-img.png" alt="img"></div>
+                        <div class="news-item__img"><img alt="img" src="./img/news-img.png"></div>
                         <div class="text-wrapper">
                             <div class="news-item__tag"><a href="">Стихии и катастрофы</a></div>
-                            <div class="news-item__title"><h5>Смартфоны научили определять опьянение хозяина по походке</h5></div>
+                            <div class="news-item__title"><h5>Смартфоны научили определять опьянение хозяина по
+                                походке</h5></div>
                         </div>
                     </div>
                 </div>
@@ -499,6 +1100,46 @@
         </div>
     </div>
 </main>
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade side-nav" id="exampleModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><img alt="logo" src="img/sidenav-logo.png"></h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav-list">
+                    <li>
+                        <div aria-controls="collapseSideNav" aria-expanded="false"
+                             class="d-flex justify-content-between"
+                             data-bs-target="#collapseSideNav" data-bs-toggle="collapse" type="button">
+                            <div>
+                                <i class="far fa-calendar"></i><a href="#">По дням</a>
+                            </div>
+                            <div class="dropdown-chevron">
+                                <i class="fas fa-chevron-up"></i>
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapseSideNav">
+                            <ul class="collapse-list">
+                                <li><a href="#">Сегодня</a></li>
+                                <li><a href="#">3 дня</a></li>
+                                <li><a href="#">5 дней</a></li>
+                                <li><a href="#">Неделя</a></li>
+                                <li><a href="#">Месяц</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><i class="fas fa-flag"></i><a href="#">В Украине</a></li>
+                    <li><i class="fas fa-globe-americas"></i><a href="#">В мире</a></li>
+                    <li><i class="fas fa-umbrella-beach"></i><a href="#">На курортах</a></li>
+                    <li><i class="fas fa-map"></i><a href="#">Карта погоды</a></li>
+                    <li><i class="fas fa-water"></i><a href="#">Температура воды</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <script crossorigin="anonymous" src="https://kit.fontawesome.com/12fa7e26b0.js"></script>
 <script src="./dist/bundle.js"></script>
 </body>
