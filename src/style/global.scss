@@ -20,6 +20,7 @@ body {
 }
 //Tooltip
 .tooltip {
+  z-index: 5;
   opacity: 1;
   position: relative;
   display: inline-block;
