@@ -832,8 +832,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_content_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_content_scss__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _style_side_nav_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style/side-nav.scss */ "./src/style/side-nav.scss");
 /* harmony import */ var _style_side_nav_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_side_nav_scss__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _js_view_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/view.js */ "./src/js/view.js");
-/* harmony import */ var _js_view_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_js_view_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _style_footer_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./style/footer.scss */ "./src/style/footer.scss");
+/* harmony import */ var _style_footer_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_style_footer_scss__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _style_news_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./style/news.scss */ "./src/style/news.scss");
+/* harmony import */ var _style_news_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_style_news_scss__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _js_view_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/view.js */ "./src/js/view.js");
+/* harmony import */ var _js_view_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_js_view_js__WEBPACK_IMPORTED_MODULE_9__);
+
+
 
 
 
@@ -873,6 +879,17 @@ console.log(mySelects);
 
 /***/ }),
 
+/***/ "./src/style/footer.scss":
+/*!*******************************!*\
+  !*** ./src/style/footer.scss ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "./src/style/global.scss":
 /*!*******************************!*\
   !*** ./src/style/global.scss ***!
@@ -888,6 +905,17 @@ console.log(mySelects);
 /*!*******************************!*\
   !*** ./src/style/header.scss ***!
   \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/style/news.scss":
+/*!*****************************!*\
+  !*** ./src/style/news.scss ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

@@ -6,6 +6,8 @@ import './style/global.scss';
 import './style/header.scss';
 import './style/content.scss';
 import './style/side-nav.scss';
+import './style/footer.scss';
+import './style/news.scss';
 
 import './js/view.js';
 
