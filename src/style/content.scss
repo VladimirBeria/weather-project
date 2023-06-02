@@ -108,7 +108,7 @@
 }
 
 .details-info-wrapper {
-  padding: 0 16px;
+  padding: 0;
   width: auto;
 }
 
@@ -292,4 +292,9 @@
   }
 }
 
-
+.seven-element-grid {
+  display: grid;
+  gap: 0 30px;
+  padding: 0;
+  grid-template-columns: repeat(7, 1fr);
+}

@@ -11390,7 +11390,7 @@ body .custom-select-container .custom-select-opener {
     width: 52px; }
 
 .details-info-wrapper {
-  padding: 0 16px;
+  padding: 0;
   width: auto; }
 
 .weather-details.precipitation, .weather-details.wind {
@@ -11507,6 +11507,12 @@ body .custom-select-container .custom-select-opener {
   .news-item__title h5 {
     line-height: 22px; } }
 
+.seven-element-grid {
+  display: grid;
+  gap: 0 30px;
+  padding: 0;
+  grid-template-columns: repeat(7, 1fr); }
+
 .modal.side-nav {
   width: 100%; }
   .modal.side-nav .modal-dialog {
@@ -11580,9 +11586,6 @@ body .custom-select-container .custom-select-opener {
   padding: 62px 0;
   background: #3983FF;
   margin-top: 40px; }
-
-body ::-webkit-scrollbar {
-  display: none; }
 
 .menu__logo {
   padding: 40px 0 37px;
